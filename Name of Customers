@@ -1,0 +1,9 @@
+SELECT COUNT (b2co.order_session_id) AS session_order
+FROM orders.b2c_order b2co
+JOIN identity.user u ON b2co.customer_name = u.first_name
+LEFT JOIN product.store_branch sb ON b2co.store_branch_id = sb.id
+LEFT JOIN product.store s ON sb.store_id = s.id
+WHERE u.role_id = 8
+  AND s.is_sandbox = FALSE
+GROUP BY sb.name , b2co.customer_name
+ORDER BY session_order DESC;
