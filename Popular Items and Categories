@@ -1,0 +1,8 @@
+SELECT SUM(srl.item_qty) AS total_item
+FROM product.store_branch sb
+LEFT JOIN product.store s ON sb.store_id = s.id
+LEFT JOIN sales.summary_report_lines srl ON sb.id = srl.store_branch_id
+WHERE s.is_sandbox = FALSE
+  AND srl.item_name IS NOT NULL
+GROUP BY srl.item_name , srl.category_name
+ORDER BY total_item DESC;
