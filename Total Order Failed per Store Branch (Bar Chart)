@@ -1,0 +1,8 @@
+SELECT COUNT(st.order_session_id) AS session_order
+FROM product.store_branch sb
+LEFT JOIN product.store s ON sb.store_id = s.id
+LEFT JOIN sales.summary_transaction st ON sb.id = st.store_branch_id
+WHERE s.is_sandbox = FALSE
+  AND st.order_session_status_name IN ('Expired','Canceled')
+GROUP BY sb.name
+ORDER BY session_order DESC;
