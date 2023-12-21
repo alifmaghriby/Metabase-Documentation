@@ -1,0 +1,8 @@
+SELECT SUM(st.order_fee) AS revenue
+FROM product.store_branch sb
+LEFT JOIN product.store s ON sb.store_id = s.id
+LEFT JOIN sales.summary_transaction st ON sb.id = st.store_branch_id
+WHERE s.is_sandbox = FALSE
+  AND st.order_session_status_name IN ('Delivered','Paid off')
+GROUP BY sb.name
+ORDER BY revenue DESC;
