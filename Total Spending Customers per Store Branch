@@ -1,0 +1,9 @@
+SELECT  
+  SUM(st.grand_total) 
+FROM sales.summary_transaction st
+LEFT JOIN product.store_branch sb ON st.store_branch_id = sb.id
+LEFT JOIN product.store s ON sb.store_id = s.id
+WHERE st.order_session_status_name IN ('Delivered','Paid off)
+  AND s.is_sandbox = FALSE
+GROUP BY sb.name
+ORDER BY st.grand_total DESC;
