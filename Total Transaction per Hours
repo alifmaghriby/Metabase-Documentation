@@ -1,0 +1,10 @@
+SELECT  
+  COUNT(st.order_session_id) AS session_order
+FROM sales.summary_transaction st
+LEFT JOIN product.store_branch sb ON st.store_branch_id = sb.id
+LEFT JOIN product.store s ON sb.store_id = s.id
+WHERE st.order_session_status_name IN ('Delivered', 'Paid off')
+  AND s.is_sandbox = FALSE
+  AND YEAR(st.order_session_created_at) = YEAR(CURRENT_DATE) -- Filter for the current year
+GROUP BY HOUR(st.order_session_created_at) -- Group by the hour part of the order creation time
+ORDER BY session_order DESC;
