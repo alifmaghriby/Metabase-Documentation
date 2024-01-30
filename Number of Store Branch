@@ -83,7 +83,23 @@ WHERE s.is_sandbox = FALSE
         OR sb."name" LIKE 'Rashya Foods By Devy$'
         OR sb."name" LIKE 'Room Service HDTI%'
         OR sb."name" LIKE 'Rumah Pepes Muslim%'
-	      OR sb."name" LIKE 'Rebecca Patisserie%'
+	OR sb."name" LIKE 'Rebecca Patisserie%'
+	OR sb."name" LIKE 'Radeesya%'
+	OR sb."name" LIKE ‘Bite Nat%’
+	OR sb."name" LIKE ‘Bumbu Pecel Mbah Genah%’
+	OR sb."name" LIKE 'Corniecello Store%'
+	OR sb."name" LIKE 'Dapurpooh%'
+	OR sb."name" LIKE 'D'Syof%'
+	OR sb."name" LIKE 'Fafifa Culinary%'
+	OR sb."name" LIKE 'Ganjuran Food Court%'
+	OR sb."name" LIKE 'Kedai Lubna%'
+	OR sb."name" LIKE 'Knaffgalery%'
+	OR sb."name" LIKE 'Moms Cookies%'
+	OR sb."name" LIKE 'Nasi Ulam Istimewa%'
+	OR sb."name" LIKE 'Radeesya Sweet Corner%'
+	OR sb."name" LIKE 'RotiBhekend%'
+	OR sb."name" LIKE 'Salzi Bakery & Catering%'
+	OR sb."name" LIKE 'Ummi Kitchen%'
         OR sb."name" LIKE 'Shava Coffee%'
         OR sb."name" LIKE 'Sobat Mentai%'
         OR sb."name" LIKE 'Spesial Nasi Campur Bali%'
@@ -96,4 +112,3 @@ WHERE s.is_sandbox = FALSE
         OR sb."name" LIKE 'Winata Jaya Printing%'
         OR sb."name" LIKE 'Yolk Kitchen%'
         OR sb."name" LIKE 'Zizi Pizzeria & Coffee%';
-
